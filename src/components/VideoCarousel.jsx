@@ -130,6 +130,10 @@ const VideoCarousel = () => {
         setVideo((prev) => ({ ...prev, isPlaying: !prev.isPlaying }));
         break;
 
+    case "pause":
+        setVideo((prev) => ({ ...prev, isPlaying: !prev.isPlaying }));
+        break;
+
       default:
         return video;
     }
@@ -147,6 +151,10 @@ const VideoCarousel = () => {
                   playsInline={true}
                   preload="auto"
                   muted
+                  className={`${
+                    list.id === 2 && 'translate-x-44'}
+                    pointer-event-none
+                `}
                   ref={(el) => (videoRef.current[i] = el)}
                   onEnded={() => 
                     i !==3 
